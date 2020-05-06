@@ -1,0 +1,17 @@
+li.Attendee {
+    text-align: left;
+    list-style: none;
+    background: white;
+    padding: 8px;
+    border-top: 1px solid rgb(238,238,238);
+  }
+  
+  li.Attendee:first-child {
+    border-top: 0;
+  }
+  li.Attendee:nth-child(even) {
+    background: rgb(246,246,246);
+  }
+  li.Attendee:hover {
+    background: gold;
+  }

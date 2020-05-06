@@ -14,14 +14,28 @@ class SignUpForm extends Component {
     }
 
     handleChange = (event) => {
-        let { attendee } = { ...this.state }
+        const { attendee } = { ...this.state }
         attendee[event.target.name] = event.target.value;
         this.setState({ attendee })
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault()
+        this.props.addAttendee({...this.state.attendee})
+        this.setState({
+            attendee: {
+                email: "",
+                guests: 0
+            }
+        })
+    }
+
     render() {
         return (
-            <form className="SignUpForm">
+            <form 
+                className="SignUpForm"
+                onSubmit={this.handleSubmit}
+            >
                 <input
                     name="email"
                     placeholder="Email"
